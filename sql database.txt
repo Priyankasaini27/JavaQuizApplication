@@ -1,5 +1,5 @@
-create database quiz;
-USE quiz;
+create database basics;
+USE basics;
 
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
