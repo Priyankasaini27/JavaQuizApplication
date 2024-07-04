@@ -1,0 +1,43 @@
+create database quiz;
+USE quiz;
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    username VARCHAR (50) unique,
+    password VARCHAR(50),
+    city VARCHAR(50),
+    email VARCHAR(50),
+    mobile_number VARCHAR(15)
+);
+
+CREATE TABLE results (
+    student_id INT,
+    score INT,
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+CREATE TABLE questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question TEXT,
+    option1 VARCHAR(255),
+    option2 VARCHAR(255),
+    option3 VARCHAR(255),
+    option4 VARCHAR(255),
+    correct_option INT
+);
+
+insert into questions (question, option1, option2, option3, option4, correct_option)
+values 
+    ('What is the default value of a boolean variable in Java?', 'true', 'false', 'null', 'undefined', 2),
+    ('Which method must be implemented by all threads?', 'start()', 'stop()', 'run()', 'main()', 3),
+    ('What is the size of a char in Java?', '8 bits', '16 bits', '32 bits', '64 bits', 2),
+    ('Which of the following is not a Java keyword?', 'class', 'interface', 'extends', 'virtual', 4),
+    ('Which package contains the String class?', 'java.util', 'java.lang', 'java.io', 'java.net', 2),
+    ('Which operator is used by Java to perform bitwise AND operation?', '&', '|', '&&', '!', 1),
+    ('Which of the following is not a feature of OOP in Java?', 'Encapsulation', 'Inheritance', 'Polymorphism', 'Compilation', 4),
+    ('What is the return type of the constructor?', 'void', 'int', 'None', 'float', 3),
+    ('Which package contains the Random class?', 'java.util', 'java.lang', 'java.io', 'java.net', 1),
+    ('Which type of inheritance does Java Classes does not support?', 'Multiple', 'Single', 'Multilevel', 'None', 1);
+
