@@ -16,7 +16,7 @@ public class QuizApp {
         QuestionService questionService = new QuestionService();
         ResultService resultService = new ResultService();
         
-  
+  try{
        while(true) {
     	   System.out.println();
     	   System.out.println("Welcome to Quiz based application");
@@ -83,9 +83,9 @@ public class QuizApp {
            }
 
        }
-   
-            
-    }
+   }catch (InputMismatchException e) {
+        	System.out.println("Enter valid input");
 
 }
-
+}
+}
